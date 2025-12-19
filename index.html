@@ -12,6 +12,7 @@
             --dark: #050505;
             --card-bg: rgba(255, 255, 255, 0.05);
             --text: #ffffff;
+            --accent: #ffcc00; /* Star Color */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -62,14 +63,26 @@
             margin-bottom: 20px; letter-spacing: -2px;
         }
 
-        .hero-sub { font-size: 1.2rem; color: #aaa; max-width: 700px; margin-bottom: 10px; }
+        .hero-sub { font-size: 1.2rem; color: #aaa; max-width: 700px; margin-bottom: 20px; line-height: 1.6; }
         
-        /* New Trust Tagline Style */
+        /* Stars & Trust Tagline Section */
+        .trust-container {
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
         .trust-tagline {
-            font-size: 0.9rem; color: var(--primary);
-            margin-bottom: 40px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px;
-            opacity: 0.8;
+            font-size: 0.85rem; color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            opacity: 0.9;
         }
 
         .btn-main {
@@ -78,6 +91,8 @@
             font-weight: bold; box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
             transition: 0.4s;
         }
+
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5); }
 
         .grid {
             max-width: 1200px; margin: 0 auto; padding: 100px 20px;
@@ -91,6 +106,8 @@
         }
 
         footer { padding: 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: #444; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -105,7 +122,12 @@
     <header>
         <h1 class="hero-title">ADVANCE GUARDIAN PRO</h1>
         <p class="hero-sub">Ultimate stealth monitoring and security intelligence. Track, protect, and manage your devices with military-grade precision.</p>
-        <p class="trust-tagline">Used by professionals, trusted by thousands.</p>
+        
+        <div class="trust-container">
+            <div class="stars">★★★★★</div>
+            <p class="trust-tagline">Used by professionals, trusted by thousands.<br>Engineered for 100% untraceable monitoring.</p>
+        </div>
+
         <a href="#" class="btn-main">GET ACCESS NOW</a>
     </header>
 
@@ -134,8 +156,8 @@
     <script>
         ScrollReveal().reveal('.hero-title', { delay: 200, origin: 'top', distance: '50px' });
         ScrollReveal().reveal('.hero-sub', { delay: 400 });
-        ScrollReveal().reveal('.trust-tagline', { delay: 500, origin: 'bottom', distance: '20px' });
-        ScrollReveal().reveal('.card', { delay: 600, interval: 200 });
+        ScrollReveal().reveal('.trust-container', { delay: 600, scale: 0.9 });
+        ScrollReveal().reveal('.card', { delay: 800, interval: 200 });
     </script>
 </body>
 </html>
