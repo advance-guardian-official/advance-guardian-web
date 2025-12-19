@@ -16,9 +16,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* Existing Styles */
         .status-badge { position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.8); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--primary); z-index: 1000; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
         .pulse-dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: pulse-animation 1.5s infinite; }
         @keyframes pulse-animation { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.3); } 100% { opacity: 1; transform: scale(1); } }
@@ -26,32 +25,31 @@
         
         header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
         .hero-title { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
-        .hero-sub { font-size: 1.2rem; color: #aaa; max-width: 700px; margin-bottom: 20px; }
+        .hero-sub { font-size: 1.2rem; color: #aaa; max-width: 700px; margin-bottom: 20px; line-height: 1.6; }
         .trust-container { margin-bottom: 40px; }
         .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 8px; }
         .trust-tagline { font-size: 0.85rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        /* Pricing Section Styles */
-        .pricing-section { padding: 100px 20px; text-align: center; }
+        /* Features Grid */
+        .grid { max-width: 1200px; margin: 0 auto; padding: 50px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .card h3 { margin: 15px 0; color: var(--primary); }
+
+        /* Pricing Section */
+        .pricing-section { padding: 100px 20px; text-align: center; background: rgba(255,255,255,0.02); }
         .pricing-grid { max-width: 1100px; margin: 50px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        
         .price-card { background: var(--card-bg); padding: 40px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); position: relative; transition: 0.4s; }
         .price-card.popular { border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(0,242,255,0.1); transform: scale(1.05); }
         .badge { background: var(--primary); color: #000; font-size: 0.7rem; font-weight: 900; padding: 5px 15px; border-radius: 50px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); }
-        
-        .plan-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
-        .price { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .price { font-size: 2.5rem; font-weight: 900; margin: 20px 0; }
         .price span { font-size: 1rem; color: #aaa; }
-        
         .features-list { list-style: none; margin-bottom: 30px; text-align: left; }
         .features-list li { margin-bottom: 12px; color: #ccc; font-size: 0.9rem; }
-        .features-list li::before { content: "✓"; color: var(--primary); margin-right: 10px; font-weight: bold; }
+        .features-list li::before { content: "✓"; color: var(--primary); margin-right: 10px; }
 
-        .btn-price { display: block; padding: 12px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: 0.3s; }
+        .btn-price { display: block; padding: 12px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; }
         .price-card.popular .btn-price { background: var(--primary); color: #000; }
-        .btn-price:hover { transform: translateY(-2px); filter: brightness(1.2); }
-
-        .btn-main { padding: 15px 40px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 10px 30px rgba(0,242,255,0.3); }
+        .btn-main { padding: 15px 40px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; }
 
         footer { padding: 50px; text-align: center; color: #444; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
@@ -75,13 +73,29 @@
         <a href="#pricing" class="btn-main">VIEW PLANS</a>
     </header>
 
+    <section class="grid">
+        <div class="card">
+            <div style="font-size: 3rem;">🛰️</div>
+            <h3>Real-time GPS</h3>
+            <p>Precise location mapping with historical movement data and geo-fencing alerts.</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 3rem;">🕵️</div>
+            <h3>Stealth Mode</h3>
+            <p>Operates completely in the background without affecting device performance.</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 3rem;">🛡️</div>
+            <h3>System Control</h3>
+            <p>Remotely manage device status, security permissions, and core system logs.</p>
+        </div>
+    </section>
+
     <section id="pricing" class="pricing-section">
         <h2 style="font-size: 2.5rem;">Choose Your Protection</h2>
-        <p style="color: #888; margin-top: 10px;">Select the best plan for your monitoring needs.</p>
-
         <div class="pricing-grid">
             <div class="price-card">
-                <div class="plan-name">Basic Trial</div>
+                <div style="font-size: 1.5rem; font-weight: 700;">Basic Trial</div>
                 <div class="price">$0 <span>/ 3 Days</span></div>
                 <ul class="features-list">
                     <li>Real-time GPS Tracking</li>
@@ -93,7 +107,7 @@
 
             <div class="price-card popular">
                 <div class="badge">MOST POPULAR</div>
-                <div class="plan-name">Pro Guardian</div>
+                <div style="font-size: 1.5rem; font-weight: 700;">Pro Monthly</div>
                 <div class="price">$29 <span>/ Month</span></div>
                 <ul class="features-list">
                     <li>Full Stealth Mode</li>
@@ -105,15 +119,15 @@
             </div>
 
             <div class="price-card">
-                <div class="plan-name">Elite Lifetime</div>
-                <div class="price">$199 <span>/ Once</span></div>
+                <div style="font-size: 1.5rem; font-weight: 700;">Pro Annual</div>
+                <div class="price">$199 <span>/ Year</span></div>
                 <ul class="features-list">
-                    <li>All Pro Features</li>
+                    <li>Everything in Monthly</li>
                     <li>Remote System Control</li>
-                    <li>Unlimited Devices</li>
-                    <li>Lifetime Updates</li>
+                    <li>2 Months Free Included</li>
+                    <li>Lifetime Updates Guarantee</li>
                 </ul>
-                <a href="#" class="btn-price">Buy Once</a>
+                <a href="#" class="btn-price">Save with Annual</a>
             </div>
         </div>
     </section>
@@ -122,7 +136,8 @@
 
     <script>
         ScrollReveal().reveal('.hero-title', { delay: 200, origin: 'top', distance: '50px' });
-        ScrollReveal().reveal('.price-card', { delay: 400, interval: 200, origin: 'bottom', distance: '30px' });
+        ScrollReveal().reveal('.card', { delay: 400, interval: 200 });
+        ScrollReveal().reveal('.price-card', { delay: 600, interval: 200 });
     </script>
 </body>
 </html>
