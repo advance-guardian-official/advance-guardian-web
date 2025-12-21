@@ -20,8 +20,8 @@
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--dark); 
-            /* High-Quality Cyber Eye Background */
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+            /* Chapter 3 Style - Ultra Dark Professional Tech Background */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)), 
                         url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
@@ -46,48 +46,49 @@
             padding: 40px 20px;
         }
         
-        /* Cyber Eye Logo Container */
+        /* Advanced Cyber Eye Logo Container */
         .logo-box {
-            width: 140px;
-            height: 140px;
-            margin-bottom: 25px;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 30px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            /* Creating a glowing eye effect for the logo area */
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.2) 0%, transparent 70%);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
-            border: 2px solid rgba(0, 242, 255, 0.4);
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.4);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .main-logo { 
-            width: 70%; 
-            height: auto; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain;
+            border-radius: 50%;
             z-index: 2; 
-            filter: drop-shadow(0 0 15px var(--primary)); 
+            filter: drop-shadow(0 0 20px var(--primary)); 
         }
 
-        .logo-placeholder {
-            position: absolute;
-            font-size: 4rem;
-            z-index: 1;
-        }
-        
-        .hero-title { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-sub { font-size: 1.15rem; color: #ddd; max-width: 800px; margin-bottom: 30px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .hero-title { font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 900; background: linear-gradient(to right, var(--primary), #fff, var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px; }
+        .hero-sub { font-size: 1.2rem; color: #ccc; max-width: 850px; margin-bottom: 40px; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.9); }
         
         .trust-container { margin-bottom: 45px; }
         .stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
         .trust-tagline { font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; line-height: 1.8; }
 
-        .btn-main { padding: 20px 50px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; text-transform: uppercase; transition: 0.3s; box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3); border: none; cursor: pointer; }
-        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5); }
+        .btn-main { padding: 22px 60px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; text-transform: uppercase; transition: 0.4s; box-shadow: 0 10px 40px rgba(0, 242, 255, 0.4); border: none; cursor: pointer; letter-spacing: 1px; }
+        .btn-main:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 20px 50px rgba(0, 242, 255, 0.6); }
 
         .grid { max-width: 1200px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--card-bg); backdrop-filter: blur(15px); padding: 45px; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(0, 242, 255, 0.05); }
+        .card { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 50px 40px; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-15px); background: rgba(0, 242, 255, 0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .card h3 { margin: 18px 0; color: var(--primary); font-size: 1.5rem; }
 
         .video-section { padding: 80px 20px; text-align: center; }
@@ -98,10 +99,11 @@
         .play-btn:hover { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--primary)); }
         
         .pricing-grid { max-width: 500px; margin: 60px auto; }
-        .price-card { background: var(--card-bg); padding: 50px 40px; border-radius: 35px; border: 2px solid var(--primary); position: relative; backdrop-filter: blur(20px); text-align: center; box-shadow: 0 20px 50px rgba(0, 242, 255, 0.15); }
+        .price-card { background: var(--card-bg); padding: 60px 40px; border-radius: 40px; border: 2px solid var(--primary); position: relative; backdrop-filter: blur(25px); text-align: center; box-shadow: 0 20px 50px rgba(0, 242, 255, 0.15); }
         .badge { background: var(--primary); color: #000; padding: 6px 15px; border-radius: 50px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 0.8rem; }
-        .price { font-size: 3.5rem; font-weight: 900; margin: 20px 0; }
-        .btn-price { display: block; padding: 18px; background: var(--primary); color: #000; text-decoration: none; border-radius: 15px; font-weight: 800; text-align: center; transition: 0.3s; text-transform: uppercase; }
+        .price { font-size: 4rem; font-weight: 900; margin: 25px 0; }
+        .btn-price { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; background: #25D366; color: #fff; text-decoration: none; border-radius: 20px; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
+        .btn-price:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
 
         footer { padding: 60px; text-align: center; color: #888; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
     </style>
@@ -115,31 +117,30 @@
 
     <header>
         <div class="logo-box">
-            <div class="logo-placeholder">👁️</div>
-            <img src="logo.png" alt="Logo" class="main-logo" onerror="this.style.display='none'">
+            <img src="logo.png" alt="Advance Guardian Pro" class="main-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2566/2566103.png'">
         </div>
         <h1 class="hero-title">Advance Guardian Pro</h1>
-        <p class="hero-sub">Ultimate stealth monitoring and security intelligence. Track, protect, and manage your devices with military-grade precision.</p>
+        <p class="hero-sub">Next-generation stealth intelligence. Experience military-grade security and untraceable monitoring in one powerful dashboard.</p>
         <div class="trust-container">
             <div class="stars">★★★★★</div>
             <p class="trust-tagline">Used by professionals, trusted by thousands.<br>Engineered for 100% untraceable monitoring.</p>
         </div>
-        <a href="#pricing" class="btn-main">Get Protection Now</a>
+        <a href="#pricing" class="btn-main">Activate Protection</a>
     </header>
 
     <section class="grid">
         <div class="card">
-            <div style="font-size: 3rem;">🛰️</div>
+            <div style="font-size: 3.5rem;">🛰️</div>
             <h3>Real-time GPS</h3>
             <p>Precise location mapping with historical movement data and geo-fencing alerts.</p>
         </div>
         <div class="card">
-            <div style="font-size: 3rem;">🕵️</div>
+            <div style="font-size: 3.5rem;">🕵️</div>
             <h3>Stealth Mode</h3>
             <p>Operates completely in the background without affecting device performance.</p>
         </div>
         <div class="card">
-            <div style="font-size: 3rem;">🛡️</div>
+            <div style="font-size: 3.5rem;">🛡️</div>
             <h3>System Control</h3>
             <p>Remotely manage device status, security permissions, and core system logs.</p>
         </div>
@@ -170,15 +171,15 @@
         <div class="pricing-grid">
             <div class="price-card">
                 <div class="badge">MOST POPULAR</div>
-                <div style="font-size: 1.5rem; font-weight: 700;">Pro Monthly</div>
+                <div style="font-size: 1.5rem; font-weight: 700;">Pro Monthly Access</div>
                 <div class="price">$29 <span>/ Mo</span></div>
-                <ul style="list-style: none; margin-bottom: 30px; text-align: left; color: #ddd; line-height: 2.2;">
-                    <li>✓ Full Stealth Mode</li>
-                    <li>✓ Call & Message Logs</li>
-                    <li>✓ Social Media Tracking</li>
-                    <li>✓ Priority 24/7 Support</li>
+                <ul style="list-style: none; margin-bottom: 30px; text-align: left; color: #ddd; line-height: 2.5;">
+                    <li>✓ Full Stealth Monitoring</li>
+                    <li>✓ WhatsApp & Call Logs</li>
+                    <li>✓ Remote Camera Access</li>
+                    <li>✓ 24/7 Priority Support</li>
                 </ul>
-                <a href="https://wa.me/YOUR_NUMBER" class="btn-price">Contact to Purchase</a>
+                <a href="https://wa.me/YOUR_NUMBER" class="btn-price">CONTACT VIA WHATSAPP</a>
             </div>
         </div>
     </section>
@@ -186,9 +187,9 @@
     <footer>&copy; 2025 Advance Guardian Pro. Engineered for Security.</footer>
 
     <script>
-        ScrollReveal().reveal('.hero-title', { delay: 200, origin: 'top', distance: '50px' });
-        ScrollReveal().reveal('.card', { delay: 300, interval: 150 });
-        ScrollReveal().reveal('.price-card', { delay: 400 });
+        ScrollReveal().reveal('.hero-title', { delay: 200, origin: 'bottom', distance: '30px' });
+        ScrollReveal().reveal('.card', { delay: 300, interval: 200, origin: 'bottom', distance: '50px' });
+        ScrollReveal().reveal('.price-card', { delay: 400, scale: 0.9 });
     </script>
 </body>
 </html>
