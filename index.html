@@ -10,94 +10,70 @@
             --primary: #00f2ff;
             --secondary: #7000ff;
             --dark: #050505;
-            --card-bg: rgba(255, 255, 255, 0.05);
             --text: #ffffff;
-            --accent: #ffcc00;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: var(--dark); 
+            background-color: var(--dark);
             color: var(--text); 
             overflow-x: hidden; 
-            scroll-behavior: smooth; 
-        }
-
-        .status-badge { 
-            position: fixed; 
-            top: 20px; 
-            right: 20px; 
-            background: rgba(0,0,0,0.85); 
-            padding: 8px 16px; 
-            border-radius: 50px; 
-            border: 1px solid var(--primary); 
-            z-index: 1000; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            backdrop-filter: blur(15px); 
         }
 
         header { 
-            min-height: 100vh; 
+            height: 100vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
             text-align: center; 
-            padding: 40px 20px;
-            /* Background par halka sa glow */
-            background: radial-gradient(circle at center, #111 0%, var(--dark) 80%);
+            padding: 20px;
+            background: radial-gradient(circle, #111 0%, #050505 100%);
         }
 
-        /* Logo Container Jo Image Na Hone Par Bhi Khali Nahi Lagega */
+        /* Logo Box Fix for GitHub */
         .logo-box {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 30px;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 25px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(0, 242, 255, 0.1);
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
         }
 
         .main-logo {
-            width: 80%;
-            height: auto;
+            max-width: 90%;
+            max-height: 90%;
             z-index: 2;
+            object-fit: contain;
         }
 
-        /* Agar image na mile to ye Shield icon dikhega */
-        .logo-fallback {
+        /* Backup Icon: Agar logo.png na mile to ye dikhega */
+        .logo-placeholder {
             position: absolute;
-            font-size: 3rem;
-            color: var(--primary);
+            font-size: 3.5rem;
             z-index: 1;
+            opacity: 0.8;
         }
 
         .hero-title { 
-            font-size: clamp(2rem, 8vw, 4.5rem); 
+            font-size: clamp(2.2rem, 8vw, 4.5rem); 
             font-weight: 900; 
             background: linear-gradient(to right, var(--primary), var(--secondary)); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
-            margin-bottom: 20px; 
             text-transform: uppercase; 
+            margin-bottom: 20px;
         }
-        
-        .hero-sub { 
-            font-size: 1.1rem; 
-            color: #bbb; 
-            max-width: 750px; 
-            margin-bottom: 35px; 
-            line-height: 1.6; 
-        }
+
+        .hero-sub { color: #bbb; max-width: 700px; margin-bottom: 40px; line-height: 1.6; }
 
         .btn-main { 
             padding: 18px 45px; 
@@ -106,51 +82,42 @@
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: 800; 
-            text-transform: uppercase; 
-            transition: 0.4s; 
-            box-shadow: 0 10px 30px rgba(112, 0, 255, 0.4); 
+            box-shadow: 0 10px 30px rgba(112, 0, 255, 0.3); 
+            transition: 0.3s;
         }
 
-        .grid { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 80px 20px; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
+        /* Status Badge */
+        .status-badge { 
+            position: fixed; top: 20px; right: 20px; 
+            background: rgba(0,0,0,0.8); padding: 8px 16px; 
+            border-radius: 50px; border: 1px solid var(--primary); 
+            display: flex; align-items: center; gap: 8px; 
         }
-        .card { 
-            background: var(--card-bg); 
-            padding: 40px; 
-            border-radius: 25px; 
-            border: 1px solid rgba(255,255,255,0.05); 
-        }
+        .dot { width: 8px; height: 8px; background: #0f0; border-radius: 50%; box-shadow: 0 0 10px #0f0; }
     </style>
 </head>
 <body>
 
     <div class="status-badge">
-        <span style="width: 8px; height: 8px; background: #0f0; border-radius: 50%; box-shadow: 0 0 10px #0f0;"></span>
-        <span style="font-size: 0.75rem; font-weight: 800; color: #fff;">System: Active</span>
+        <div class="dot"></div>
+        <span style="font-size: 12px; font-weight: bold;">System: Active</span>
     </div>
 
     <header>
         <div class="logo-box">
-            <div class="logo-fallback">🛡️</div>
-            <img src="logo.png" alt="" class="main-logo" onerror="this.style.opacity='0'">
+            <div class="logo-placeholder">🛡️</div>
+            <img src="logo.png" alt="" class="main-logo" onerror="this.style.display='none'">
         </div>
         
         <h1 class="hero-title">Advance Guardian Pro</h1>
         <p class="hero-sub">Ultimate stealth monitoring and security intelligence. Track, protect, and manage your devices with military-grade precision.</p>
         
-        <a href="#plans" class="btn-main">Get Protection Now</a>
+        <a href="#" class="btn-main">GET PROTECTION NOW</a>
     </header>
 
-    <section class="grid">
-        <div class="card"><h3>Real-time GPS</h3><p>Live tracking and alerts.</p></div>
-        <div class="card"><h3>Stealth Mode</h3><p>Hidden operation.</p></div>
-        <div class="card"><h3>Encrypted</h3><p>Military-grade security.</p></div>
-    </section>
-
+    <script>
+        ScrollReveal().reveal('.hero-title', { delay: 200, origin: 'bottom', distance: '30px' });
+        ScrollReveal().reveal('.logo-box', { delay: 100, scale: 0.8 });
+    </script>
 </body>
 </html>
