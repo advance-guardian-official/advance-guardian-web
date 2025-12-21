@@ -19,7 +19,13 @@
         
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: var(--dark); /* Pakka Black Background */
+            background-color: var(--dark); 
+            /* Online Background Image Link */
+            background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text); 
             overflow-x: hidden; 
             scroll-behavior: smooth; 
@@ -39,8 +45,6 @@
             text-align: center; 
             padding: 40px 20px;
             position: relative;
-            /* Background Glow Effect */
-            background: radial-gradient(circle at center, #111 0%, var(--dark) 80%);
         }
         
         /* Logo Container with Backup */
