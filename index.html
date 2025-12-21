@@ -20,8 +20,8 @@
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--dark); 
-            /* Background image with dark overlay for better readability */
-            background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), url('logo.png');
+            /* Background image: logo.png must be in the same folder */
+            background: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.9)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -36,37 +36,34 @@
         
         header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; position: relative; }
         
-        /* Logo Styling with Glow */
-        .main-logo { width: 140px; height: auto; margin-bottom: 25px; filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.5)); transition: 0.5s; }
-        .main-logo:hover { transform: scale(1.05); filter: drop-shadow(0 0 30px var(--primary)); }
+        /* Logo Styling with Glow and proper sizing */
+        .main-logo { width: 140px; height: auto; margin-bottom: 25px; filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.6)); transition: 0.5s; }
+        .main-logo:hover { transform: scale(1.1); filter: drop-shadow(0 0 30px var(--primary)); }
         
-        .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero-sub { font-size: 1.1rem; color: #ccc; max-width: 750px; margin-bottom: 30px; line-height: 1.6; font-weight: 300; }
+        .hero-title { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; letter-spacing: -1px; text-transform: uppercase; }
+        .hero-sub { font-size: 1.1rem; color: #bbb; max-width: 750px; margin-bottom: 30px; line-height: 1.6; font-weight: 300; }
         
         .trust-container { margin-bottom: 45px; }
         .stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
         .trust-tagline { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* Features Grid with Blur effect */
         .grid { max-width: 1200px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: var(--card-bg); backdrop-filter: blur(12px); padding: 45px; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         .card h3 { margin: 18px 0; color: var(--primary); font-size: 1.5rem; }
-        .card p { color: #bbb; line-height: 1.5; }
+        .card p { color: #aaa; line-height: 1.6; }
 
-        /* Video Section */
         .video-section { padding: 100px 20px; text-align: center; }
         .video-grid { max-width: 1200px; margin: 50px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .video-card { background: rgba(10, 10, 10, 0.6); backdrop-filter: blur(10px); border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+        .video-card { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(10px); border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
         .video-card:hover { border-color: var(--primary); }
-        .video-placeholder { width: 100%; aspect-ratio: 16/9; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .play-btn { font-size: 3rem; color: var(--primary); cursor: pointer; opacity: 0.8; transition: 0.3s; z-index: 2; }
-        .play-btn:hover { transform: scale(1.1); opacity: 1; }
+        .video-placeholder { width: 100%; aspect-ratio: 16/9; background: #111; display: flex; align-items: center; justify-content: center; position: relative; }
+        .play-btn { font-size: 3rem; color: var(--primary); cursor: pointer; transition: 0.3s; z-index: 2; }
+        .play-btn:hover { transform: scale(1.15); filter: drop-shadow(0 0 10px var(--primary)); }
         .video-info { padding: 25px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); }
         .video-info h4 { color: var(--primary); margin-bottom: 12px; font-size: 1.25rem; }
         .video-info p { font-size: 0.9rem; color: #888; line-height: 1.6; }
 
-        /* Pricing Section */
         .pricing-section { padding: 120px 20px; text-align: center; }
         .pricing-grid { max-width: 1100px; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
         .price-card { background: var(--card-bg); backdrop-filter: blur(20px); padding: 50px 40px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.08); position: relative; transition: 0.4s; }
@@ -86,7 +83,7 @@
         .btn-main { padding: 18px 45px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; box-shadow: 0 8px 25px rgba(112, 0, 255, 0.3); }
         .btn-main:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(112, 0, 255, 0.5); }
 
-        footer { padding: 60px; text-align: center; color: #555; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        footer { padding: 60px; text-align: center; color: #666; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -97,14 +94,14 @@
     </div>
 
     <header>
-        <img src="logo.png" alt="Advance Guardian Pro" class="main-logo">
-        <h1 class="hero-title">ADVANCE GUARDIAN PRO</h1>
+        <img src="logo.png" alt="Advance Guardian Pro Logo" class="main-logo">
+        <h1 class="hero-title">Advance Guardian Pro</h1>
         <p class="hero-sub">Ultimate stealth monitoring and security intelligence. Track, protect, and manage your devices with military-grade precision.</p>
         <div class="trust-container">
             <div class="stars">★★★★★</div>
             <p class="trust-tagline">Used by professionals, trusted by thousands.<br>Engineered for 100% untraceable monitoring.</p>
         </div>
-        <a href="#pricing" class="btn-main">EXPLORE PLANS</a>
+        <a href="#pricing" class="btn-main">Get Protection Now</a>
     </header>
 
     <section class="grid">
